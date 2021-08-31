@@ -1,0 +1,15 @@
+{% load i18n admin_urls %}
+
+{% block object-tools-items %}
+    {% if has_add_permission %}
+    <div class="text-start">
+        <li class="nav-item" style="list-style-type: none;  margin-right:120px; ">
+            {% url cl.opts|admin_urlname:'add' as add_url %}
+            <a href="{% add_preserved_filters add_url is_popup to_field %}" class="addlink btn btn-sm btn-success" style=" margin-right:0px;">
+                <i class="fa fa-plus-circle"></i>
+                {% blocktrans with cl.opts.verbose_name as name %}Add New {{ name }}{% endblocktrans %}
+            </a>
+        </li>
+        </div>
+    {% endif %}
+{% endblock %}

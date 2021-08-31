@@ -1,0 +1,26 @@
+.grid-container {
+    display: grid;
+    
+    grid-row-gap: 50px;
+    grid-column-gap: 60px;
+
+    padding: 10px;
+  
+  }
+
+
+.grid-templatea1{
+  grid-template-columns: auto auto ;
+}
+
+.grid-templatea4{
+  grid-template-columns: auto auto auto auto ;
+}
+  
+.item-grid {
+   
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    height: fit-content;
+  }

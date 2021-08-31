@@ -1,0 +1,33 @@
+
+{% load i18n %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary breadcrumb shadow-lg p-3 bg-body mb-3 rounded  ">
+  <div class="container-md">
+    <a class="navbar-brand" href="#" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="auto" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+</svg>
+    
+    
+    Navbar</a>
+<a class="btn btn-primary btn-sm" href="http://127.0.0.1:8000/seller"> Home</a>
+
+
+{% if request.user.is_authenticated %}
+        Hi {{ request.user.username }},
+
+        <li class="nav-item">
+       
+          <a class="nav-link font-weight-bold" href="{% url 'account:logout' %}?next=/seller"> {% trans 'Log out' %}</a>
+          
+        </li>
+         
+         
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" href="{% url "myinventory:login" %}?next=/seller">Log-in</a>
+        </li>
+
+{% endif %}
+  </div>
+</nav>

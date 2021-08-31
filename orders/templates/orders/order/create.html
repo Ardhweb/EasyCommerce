@@ -1,0 +1,46 @@
+{% extends 'basic.html' %}
+
+{% load static %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<h1>Checkout</h1>
+<div class="order-info container ">
+    <div class="row" >
+    <div class="col-md-8">
+    <h3 class="breadcrumb">Your Order</h3>
+    <ul class="card">
+        {% for item in cart  %}
+        
+        <li class="list">
+            {{item.quantity}} x {{item.product.name}}
+            <span>Rs{{item.total_price}}</span>
+        </li>
+        
+        {% endfor %}
+    </ul>
+    <p class="breadcrumb bg-warning font-weight-bold">Total: Rs {{cart.get_total_price}}</p>
+    
+</div>
+
+<div class="col-md-4 col-sm-6">
+
+ <form method="post" class="order-form">
+ {% if request.user.is_authenticated %}
+ 
+ {{ form.as_p }}
+ <p value="username">{{ request.user.username }}</p>
+ <p><input type="submit" value="Place order" class="btn btn-primary btn-lg rounded-0"></p>
+ {% csrf_token %}
+ {% endif %}
+ </form>
+</div>
+
+
+
+
+</div>
+</div>
+{% endblock  %}
+

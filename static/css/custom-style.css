@@ -1,0 +1,42 @@
+
+.AV
+{
+    color: red;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.hide-desc{
+    display: none;
+   
+    font-weight: 600;
+}
+
+.showdesc:empty{
+    font-size:12px;
+    
+}
+
+.showdesc:hover + .hide-desc{
+    display: block;
+    overflow: hidden;
+  
+
+}
+
+.pr-card{
+    padding:20px;
+}
+
+
+/*Responsive*/
+@media  screen and (max-width:450px) {
+
+.col-xs-3 .col-sm-3 .col-md-3 {
+     color:red
+   
+}
+.row{
+    display: inline-table table;
+}
+}

@@ -1,0 +1,56 @@
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+  }
+  
+  input[type=checkbox] {
+    width:50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 12px 0 0;
+    height:18px;
+    background-color:red;
+    
+  
+  
+  }
+  
+  input.default[type=submit]{
+    background-color: #da2020; /* Green */
+   
+    color: white;
+
+
+    padding: 15px 15px 15px 15px;
+  
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: auto;
+      cursor: pointer;
+      width:auto;
+      border: 3px solid red;
+      border-radius: 8px;
+      height: fit-content;
+      font-size: 19px;
+  
+    
+    
+    
+  
+  }
+  
+  input.default[type=submit]:hover{
+    box-shadow: 0 12px 16px 0 rgba(139, 130, 130, 0.774), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  
+
+
+selected {
+background-color: aliceblue;
+  }

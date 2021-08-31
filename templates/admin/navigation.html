@@ -1,0 +1,71 @@
+{% load i18n %}
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+
+
+<a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"> {{site_header}}</a>
+
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+  
+  
+  
+  
+  
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      
+    </li>
+  </ul>
+  
+{% block usertools %}
+
+                {% if has_permission %}
+                    <div id="user-tools">
+                        {% block welcome-msg %}
+                        <a class="link-primary p-1">
+                            {% trans 'Welcome,' %} </a>
+                            <strong class="link-warning">{% firstof user.get_short_name user.get_username %}</strong>.
+                        {% endblock %}
+                        {% block userlinks %}
+                       
+                            {% if site_url %}
+                            
+                                <a class="nav-item" href="{{ site_url }}">{% trans 'View site' %}</a> /
+                         
+                            {% endif %}
+                            {% if user.is_active and user.is_staff %}
+                                {% url 'django-admindocs-docroot' as docsroot %}
+                                {% if docsroot %}
+                                    <a href="{{ docsroot }}">{% trans 'Documentation' %}</a> /
+                                {% endif %}
+                            {% endif %}
+                            {% if user.has_usable_password %}
+                                <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
+                            {% endif %}
+                             <a class="m-2" href="{% url 'admin:logout' %}?next=/admin">{% trans 'Log out' %}</a>
+
+                            
+                        
+                        {% endblock %}
+                    </div>
+                {% endif %}
+
+            {% endblock %}
+
+
+ {% if request.user.is_authenticated %}
+     <!--This part is blank because we add logout with block userlink-->
+ {% else %}
+       <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="link-success"  href="{% url 'admin:login' %}">{% trans 'Log in' %}</a>
+    </li>
+  </ul>                 
+
+{% endif %}
+   
+           
+  
+</header>

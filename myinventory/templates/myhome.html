@@ -1,0 +1,168 @@
+{% load static %}
+
+{% load i18n %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>myinventory!</title>
+
+    <style>
+  table {
+  counter-reset: rowNumber;
+}
+
+.t1::before {
+  display: table-cell;
+  counter-increment: rowNumber;
+  content: counter(rowNumber) ".";
+  padding-right: 0.3em;
+  text-align: right;
+}
+</style>
+  </head>
+  <body>
+   
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+
+
+
+
+
+
+    
+    
+   
+
+
+<!-- As a link -->
+
+ 
+
+<div class="d-flex flex-row bd-highlight  grid-gap-2  " style="grid-gap:2px; margin-bottom:0;">
+  
+
+
+<!--S I D E B A R-->
+  <!--flex main01 Left for Sidebar-->  <!--11111111111111111111111111111111111111111111-->
+  <div class="d-inline-flex  bd-highlight ">
+  
+   <div class="h-100 overflow-hidden  " style="padding-right:3px; margin-right:10px;">
+
+ 
+ {% include 'seller/sidebar.html' %}
+  
+</div>
+</div>
+
+
+<!--flex main01 Left for Sidebar End--> 
+
+<!--S I D E B A R- F L E X-E N D-H E R E-->
+
+
+<!--flex main02 Right--> <!--11111111111111111111111111111111111111111111-->
+
+
+<div class="p-2 bd-highlight flex-column flex-fill  ">
+
+
+
+      <div >{% include 'seller/navs.html' %}</div>
+
+
+
+<!--Main coontent is here inside it -->
+<div class=" p-3 mb-5  rounded ">
+<!--Main coontent is here inside it -->
+<div class='container rounded'>{% include 'seller/status-total.html' %}</div>
+
+<!--Main coontent is here  -->  <!--Main coontent  put cards here -->
+
+
+<p>
+
+
+re are many good reasons to create a blog.
+
+You may want to practice your writing, create a following, establish your brand, or use blogging as a marketing tool to increase site traffic. It’s also a great way to connect with like-minded people.
+
+How do you choose the site to build your blog on?
+ – How much hands-on work does your blogging solution need? Does it take care of most of the activities and features for you, or do you have to do everything by hand? This will have a serious impact on yo
+</p>
+
+<!--2-->
+<div class="shadow-lg p-3 mb-5 bg-body rounded">
+
+
+large Vfdd
+
+</div>
+{% block content %}
+
+<div class=" p-3 mb-5 bg-body rounded">
+
+
+</div>
+{% endblock %}
+
+
+
+
+
+<!--Next after it-->
+
+
+</div>
+<!--2End-->
+
+
+
+
+
+
+
+<!--Main ccontent end here-->
+  
+  </div>
+ 
+  <!--mainflex02right-End-->
+
+  </div>
+
+<!-- As a heading -->
+
+
+ 
+
+
+
+     
+    
+  
+       
+    <!---->
+
+
+  
+
+
+  </body>
+</html>

@@ -1,0 +1,36 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}
+ {{ product.name }}
+{% endblock %}
+{% block content %}
+ <div class="product-detail">
+  </div>
+</nav>
+<div class="container border-info">
+ <img src="{% if product.upload_Image  %}{{ product.upload_Image.url }}{% else %}
+ {% static "  " %}{% endif %}">
+ 
+  <h2>{{ product.name }}</h2>
+  
+   <h2>
+ 
+     </h2>
+     
+      <p class="price">Rs.₹ {{ product.price }}</p>
+      <form action="{% url "cart:cart_add" product.id %}" method="post" class="font-font-weight-bold">
+ {{ cart_product_form }}
+ {% csrf_token %}
+ <input type="submit" value="Add to cart" class="btn btn-primary btn-lg rounded-0 font-weight-bold" style="width:auto; height:auto;">
+</form>
+
+  <p class="font-weight-bold">Product Type :{{product.product_type}}</p>
+    <p class="font-weight-normal"> {{ product.description }}</p>
+       <p class="font-weight-bold">Created at: {{product.created_at}}</p>
+      <p class="font-weight-bold">Updated at: {{product.updated_at}}</p>
+     
+    <p>{{product.manufacturer}}</p>
+</div>
+ </div>
+ 
+{% endblock %}

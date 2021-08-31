@@ -1,0 +1,169 @@
+
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link ref="stylesheet"  href="{% static 'admin/login.css' %}"> 
+  
+
+    <title>Hello, world!</title>
+    
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+body{
+    margin:0;
+    background-color:light;
+}
+
+
+    </style>
+    
+  </head>
+  <body class="text-center"  >
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+
+
+
+
+
+{% load i18n static %}
+
+
+
+{% block content %}
+<div class="container p-4 text-center">
+<div class="  card-body  mx-auto " >
+<main class="form-signin "  >
+
+<div class="rounded mx-auto d-block breadcrumb p-5 m-5 w-50 bg-body shadow regular rounded" style="">
+<a href=="" class="  link-secondary h4 ">{{site_header}}</a>
+  <form action="{{ app_path }}" method="post" id="login-form" class="login24" >
+  {% csrf_token %}
+    <img class="mb-4" src="data:image/jpeg;base64,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" alt="" width="72" height="57">
+     <div class=" p-2  {{ direction.panel }}" >
+                        <h5 class=" fs-4 title">{% trans 'Log in' %}</h5>
+                    </div>
+    <div class=" fs-7 fw-bold w-100 {{ direction.panel }}" >
+                                        <label   for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+                                        <input  type="text" name="{{ form.username.name }}" class="form-control"
+                                               placeholder="{{ form.username.label }}">
+                                    </div>
+      <div class="form-group  fs-7 fw-bold  {{ direction.panel }}">
+                                        <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+                                        <input  type="password" name="{{ form.password.name }}" class="form-control"
+                                               placeholder="{{ form.password.label }}">
+                                        <input type="hidden" name="next" value="{{ next }}">
+                                    </div>
+                                
+
+                            
+                                    <div class=" form-group {{ direction.panel }}">
+                                        {% url 'admin_password_reset' as password_reset_url %}
+                                        {% if password_reset_url %}
+                                            <div class="password-reset-link">
+                                                <a href="{{ password_reset_url }}">
+                                                    {% trans 'Forgotten your password or username?' %}
+                                                </a>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                
+
+                           
+                                    <div class='p-4'>
+                                        <button type="submit"
+                                                class="btn btn-primary btn-lg  btn-lg" >{% trans 'Log in' %}</button>
+                                               <div>  &nbsp; &nbsp;
+                  Don't have an account? <a href="" class="text-primary">Create</a> </div>
+                                  </div>
+                            
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+   
+  </form>
+  </div>
+</main>
+</div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+{% block extrascript %}
+    <script type="application/javascript">
+        {% if form.username.errors %}
+            notification.danger("<p class='{{ direction.panel }}'>" + "{{ form.username.errors }}" + "</p>", 'top', '{{ direction.notify }}');
+        {% endif %}
+        {% if form.password.errors %}
+            notification.danger("<p class='{{ direction.panel }}'>" + "{{ form.password.errors }}" + "</p>", 'top', '{{ direction.notify }}');
+        {% endif %}
+
+        {% if user.is_authenticated %}
+            var msg = "You are authenticated as {{ username }}, but are not authorized to " +
+                "access this page.Would you like to login to a different account ?"
+            notification.warning("<p class='{{ direction.panel }}'>" + msg + "</p>", 'top', '{{ direction.notify }}');
+        {% endif %}
+
+        {% if form.errors and not form.non_field_errors %}
+            {% if form.errors.items|length == 1 %}
+                notification.warning("<p class='{{ direction.panel }}'>" + "{% trans "Please correct the error below." %}" + "</p>", 'top', '{{ direction.notify }}');
+            {% else %}
+                notification.warning("<p class='{{ direction.panel }}'>" + "{% trans "Please correct the errors below." %}" + "</p>", 'top', '{{ direction.notify }}');
+            {% endif %}
+        {% endif %}
+
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+               
+            {% endfor %}
+        {% endif %}
+    </script>
+{% endblock %}
+
+
+
+
+
+
+
+    
+  </body>
+</html>

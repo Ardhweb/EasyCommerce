@@ -1,0 +1,17 @@
+
+{% load static %} 
+ 
+ 
+
+
+
+<nav id="sidebarMenu" class=" pre-scrollable  col-md-3 col-lg-2 d-md-block bg-body shadow-lg  sidebar " data-spy="scroll"  >
+ 
+<div class=" pt-3 h-100 navbar-nav-scroll " >
+      
+   {% include 'admin/app_list.html' with app_list=available_apps show_changelinks=False %}
+</div>
+
+
+</nav>
+   

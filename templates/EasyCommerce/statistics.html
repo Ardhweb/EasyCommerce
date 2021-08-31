@@ -1,0 +1,115 @@
+
+
+
+
+
+
+
+
+
+
+<!--Total-->
+{% block content %}
+
+<div class="row p-2" style="margin-left:10%;">
+<div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body" style="background-color: blue">
+                    <div class="stat-widget-five">
+                        <div class="stat-icon dib flat-color-1">
+                            <i class="fa fa-shopping-cart"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="text-left dib">
+         
+                                <div class="stat-text"><span  style="color: white" > {{order1.count}}</span></div>
+                      
+                                <div class="stat-heading" style="color: white">Order</div>
+                                 {{order.id.count|length}}
+
+                                {% for total_oder in total_oder  %}
+                                
+                               {{ total_oder}}
+                                {% endfor %}
+
+
+                             
+                   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  <button class="btn btn-warning" herf="http://127.0.0.1:8000/orders/Blog">Total Order page Blog</button>
+ <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body" style="background-color: green">
+                    <div class="stat-widget-five">
+                        <div class="stat-icon dib flat-color-2">
+                            <i class="fa fa-list"></i>
+                        </div>
+                        <div class="stat-content" >
+                            <div class="text-left dib">
+                                <div class="stat-text" style="color: white" ><span class="count">{{total_product}}</span></div>
+                                <div class="stat-heading" style="color: white">Product</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+ <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body" style="background-color: red">
+                    <div class="stat-widget-five">
+                        <div class="stat-icon dib flat-color-2">
+                            <i class="fa fa-list"></i>
+                        </div>
+                        <div class="stat-content" >
+                            <div class="text-left dib">
+                                <div class="stat-text" style="color: white"><span >{{ total_pro }}</span></div>
+                                <div class="stat-heading" style="color: white">Customers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+<!--Total end-->

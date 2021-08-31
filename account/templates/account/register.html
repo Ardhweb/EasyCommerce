@@ -1,0 +1,16 @@
+{% extends 'basic.html' %}
+
+{% block title %}Create an account{% endblock %}
+{% block content %}
+<div class="text-center">
+ <h1>Create an account</h1>
+ <p>Please, sign up using the following form:</p>
+ <form method="post" class="border container shadow-lg text-center">
+ <div class="text-left h6">
+ {{ user_form.as_p }}
+ {% csrf_token %}
+ <p><input type="submit" value="Create my account" class="btn btn-primary btn-lg btn-md rounded-0"></p>
+ <div>
+ </form>
+ <div>
+{% endblock %}

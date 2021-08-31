@@ -1,0 +1,13 @@
+
+{% load i18n %}
+
+<div class="filter_panel card-body bg-body">
+    <h5>{% blocktrans with filter_title=title %} By {{ filter_title }} {% endblocktrans %}</h5>
+    <ul class="nav flex-column h-50">
+        {% for choice in choices %}
+            <li{% if choice.selected %} class="selected nav-item  "{% endif %}>
+                <a class="nav-link" href="{{ choice.query_string|iriencode }}" title="{{ choice.display }}">{{ choice.display }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</di

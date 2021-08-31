@@ -1,0 +1,179 @@
+
+
+
+<p class="h4">Order's & Detail</p>
+
+<!--forloop using -->
+<table class="table bg-body shadow-lg pb-3 rounded w-75">
+
+  <thead>
+    <tr style="background-color:rgb(175, 227, 252);" >
+    
+      <th scope="col">#. No</th>
+     
+
+
+      <th scope="col">Order No. </th>
+     <th scope="col">Order Item's </th>
+     <th scope="col">Price </th>
+      <th scope="col">Quantity </th>
+      <th scope="col">Total </th>
+   
+    </tr>
+ 
+ 
+  </thead>
+
+  <tbody>
+  
+  {% for myorders in myorderss %}
+    <tr >
+     
+      <th class="t1" scope="row"></th>
+
+        <td>{{myorders.order}}</td>
+        <td>{{myorders.product}}</td>
+          <td>{{myorders.price}}.₹ </td>
+             <td>{{myorders.quantity}}</td>
+             
+             <td>₹{{ myorders.get_cost }}.₹ Rs</td>
+
+             
+            
+          
+    </tr>  
+    {% endfor %}
+
+
+  </tbody>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+<table class="table bg-body shadow-lg pb-3 rounded overflow-scroll  ">
+
+
+
+
+
+ <thead   >
+ 
+    <tr class="  "  style="background-color:rgb(248, 129, 73);"> 
+      <th scope="col">#ORDER NO.</th>
+       
+      <th scope="col" class="text-nowrap">Full Name</th>
+      
+      <th  class="text-center" scope="col">Email</th>
+       <th  class="text-center" scope="col">Phone</th>
+       <th  class="text-center" scope="col" class="overflow-hidden text-nowrap">Delivery Status</th>
+         <th   class="text-center"scope="col">Paid</th>
+        <th  class="text-center" scope="col" class="overflow-hidden text-nowrap ">Invoice Detail</th>
+         <th  class="text-center" scope="col">Update/Delete</th>
+         
+    </tr>
+  </thead>
+
+  <tbody>
+
+
+
+
+
+  {% for order_list in order_list  %}
+    <tr>
+      <th scope="row"><a class="text-decoration-none text-dark" href="#">{{ order_list.id}}</a></th>
+      
+        <td>{{ order_list.first_name}} {{ order_list.last_name}}</td>
+     
+      <td>{{ order_list.email}}</td>
+      <td>{{ order_list.mobile}}</td>
+       <td>{{ order_list.order_status}}</td>
+       <td>{{ order_list.paid}}</td>
+     
+        <td class="text-center text-nowrap"><a href="invoice/{{order_list.id}}">View</a></td> 
+         
+         <td><a class="btn btn-primary  btn-sm" href="update/{{order_list.id}}">Edit</a>
+         <a class="btn btn-danger  btn-sm text-wrap" href="">Del</a>
+         </td>
+       
+    </tr>
+    {% endfor %}
+  
+  </tbody>
+</table>
+
+
+<p class="h4">Total Amount</p>
+
+<div class="d-inline-flex p-2 bd-highlight     ">
+ 
+
+<table class="table  shadow-lg  rounded pb-2   ">
+ 
+  <thead  style="background-color:rgb(234, 0, 255);" >
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Order</th>
+      <th scope="col">Total Amount</th>
+     
+     <th scope="col">Paid</th>
+      <th scope="col">Order Detail</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+  {% for order_list in order_list  %}
+    <tr>
+      <th class="t1 fs-6   " scope="row"> </th>
+     
+      <td class="fs-6 fw-bold"><a class="text-dark text-decoration-none" href="#">order {{order_list.id}}</a></td>
+      
+      <td class="fs-6 fw-bold">{{order_list.get_total_cost}} .₹ </td>
+     <td class="fs-6 fw-bold text-capitalize">{{order_list.paid|yesno}} </td>
+      <td class="fs-6 "><a class=" text-decoration-none text-center" href="info/{{order_list.id}}">View</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table></div>
+
+<div class="d-inline-flex p-2 bd-highlight">
+<table class=" table shadow-lg rounded pb-1 ">
+
+  <thead  style="background-color:rgb(234, 0, 255);">
+
+    <tr>
+      <th>#</th>
+      <th scope="col">Order</th>
+      <th scope="row">Items</th>
+      <th scope="col">Product Id</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for myorders in myorderss  %}
+    <tr  class="overflow-hidden text-wrap" >
+      <th class="t1" scope="row"></th>
+      <td>{{myorders.order}}</td>
+      <td  class="text-center"  scope="col" class="text-break"   style="max-width: 150px;">{{myorders.product}}</td>
+      <td class="text-center">{{myorders.id}}</td>
+    </tr>
+
+     <tr>
+ 
+ {% endfor %}
+  </tbody>
+</table>
+</div>
+<div class="d-inline-flex p-2 bd-highlight">
+
+i inlinee flex
+</div>
+
